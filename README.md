@@ -15,12 +15,9 @@
 
 ---
 
-### 🚀 Start Here
+### 🚀
 
-- 🌲 **[forest-productivity](https://github.com/Sriram-Nambiar/forest-productivity)** — Gamified focus app built with React Native (Expo); switch apps and your tree dies. Built for Seeker Phone with Solana wallet integration.
-- 🌍 **[Ecosmart](https://github.com/Sriram-Nambiar/Ecosmart)** — Interactive web app that calculates household energy consumption & carbon footprints, with charts and actionable tips.
-- 🤖 **[gif-reply-bot](https://github.com/Sriram-Nambiar/gif-reply-bot)** — ML-powered chatbot that detects emotion from text and replies with matching GIFs (HuggingFace NLP + Klipy API).
-- 💧 **[water-risk-bengaluru](https://github.com/Sriram-Nambiar/water-risk-bengaluru)** — Analyzes Bengaluru lake water quality data to estimate contamination risk using ML, visualized on an interactive map.
+
 
 ---
 
