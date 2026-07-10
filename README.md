@@ -29,7 +29,7 @@
 
 ---
 
-### 📊 GitHub Stats
+### 📊 GitHub Activity
 ![contributions](contributions.svg)
 
 ---
