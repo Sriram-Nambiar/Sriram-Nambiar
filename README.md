@@ -33,18 +33,7 @@
 ---
 
 ### 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Sriram-Nambiar&show_icons=true&theme=default&hide_border=true" alt="Sriram's GitHub stats" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sriram-Nambiar&hide_border=true" alt="Sriram's GitHub streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sriram-Nambiar&layout=compact&hide_border=true" alt="Top languages" />
-</p>
+![contributions](contributions.svg)
 
 ---
 
