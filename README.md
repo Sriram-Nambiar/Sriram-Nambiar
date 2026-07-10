@@ -1,10 +1,10 @@
-<h1 align="center">Hi, I'm Sriram 👋</h1>
+<h1 >Hi, I'm Sriram 👋</h1>
 
-<p align="center">
+<p >
 📍 Bengaluru | 🎓 Computer Science Student | 🛠️ Building things with JS & React
 </p>
 
-<p align="center">
+<p>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" />
   <img src="https://img.shields.io/badge/React_Native-20232A?style=flat&logo=react&logoColor=61DAFB" />
