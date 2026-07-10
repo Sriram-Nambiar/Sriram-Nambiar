@@ -6,16 +6,21 @@ Setup:
   1. Create a token at https://github.com/settings/tokens
      (classic token, no special scopes needed for public contribution data)
   2. Run:  export GITHUB_TOKEN=ghp_yourtokenhere
-  3. Run:  python generate_contribution_graph.py Sriram-Nambiar
+  3. Run:  python generate_contribution_graph.py Sriram-Nambiar --start 2026-01-01
   4. Output: contributions.svg — embed it in your README, e.g.:
      ![contributions](contributions.svg)
      or upload it and use its raw URL.
+
+Options:
+  --start YYYY-MM-DD   only include weeks on/after this date (default: no trimming)
 """
 
 import os
 import sys
 import json
+import argparse
 import urllib.request
+from datetime import date
 
 QUERY = """
 query($login: String!) {
@@ -59,6 +64,17 @@ def level_color(v):
         return "#26a641"
     return "#39d353"
 
+MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+def trim_weeks(weeks, start_date):
+    if not start_date:
+        return weeks
+    return [
+        week for week in weeks
+        if week["contributionDays"] and week["contributionDays"][-1]["date"] >= start_date
+    ]
+
 def build_svg(weeks):
     cell = 34
     gap = 3
@@ -84,7 +100,8 @@ def build_svg(weeks):
             month = days[0]["date"][5:7]
             if month != last_month:
                 x = left_pad + c * (cell + gap)
-                svg.append(f'<text x="{x}" y="16" fill="#8b949e" font-size="11" font-family="sans-serif">{days[0]["date"][:7]}</text>')
+                month_name = MONTH_NAMES[int(month) - 1]
+                svg.append(f'<text x="{x}" y="16" fill="#8b949e" font-size="11" font-family="sans-serif">{month_name}</text>')
                 last_month = month
         for r, day in enumerate(days):
             x = left_pad + c * (cell + gap)
@@ -99,14 +116,19 @@ def build_svg(weeks):
     return "\n".join(svg)
 
 if __name__ == "__main__":
-    username = sys.argv[1] if len(sys.argv) > 1 else "Sriram-Nambiar"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("username", nargs="?", default="Sriram-Nambiar")
+    parser.add_argument("--start", default=None, help="Only show weeks on/after this date, e.g. 2026-01-01")
+    args = parser.parse_args()
+
     token = os.environ.get("GITHUB_TOKEN")
     if not token:
         print("Set GITHUB_TOKEN first: export GITHUB_TOKEN=ghp_yourtokenhere")
         sys.exit(1)
 
-    weeks = fetch_contributions(username, token)
+    weeks = fetch_contributions(args.username, token)
+    weeks = trim_weeks(weeks, args.start)
     svg = build_svg(weeks)
     with open("contributions.svg", "w") as f:
         f.write(svg)
-    print("Wrote contributions.svg")
+    print(f"Wrote contributions.svg ({len(weeks)} weeks)")
