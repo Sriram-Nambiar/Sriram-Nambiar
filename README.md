@@ -1,7 +1,7 @@
 <h1 >Hi, I'm Sriram 👋</h1>
 
 <p >
-📍 Bengaluru | 🎓 Computer Science Student | 🛠️ Building things with JS & React
+📍 Bengaluru
 </p>
 
 <p>
