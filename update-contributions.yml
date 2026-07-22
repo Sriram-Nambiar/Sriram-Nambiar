@@ -1,0 +1,40 @@
+name: Update Contribution Graph
+
+on:
+  schedule:
+    # Runs every 6 hours. Adjust as you like (min interval on GitHub is ~5 min,
+    # but there's no need to go that aggressive for a contribution graph).
+    - cron: '0 */6 * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate contribution graph
+        env:
+          GITHUB_TOKEN: ${{ secrets.CONTRIB_TOKEN }}
+        run: python generate_contribution_graph.py Sriram-Nambiar --start 2026-01-01
+
+      - name: Commit and push if the SVG changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add contributions.svg
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update contribution graph"
+            git push
+          fi
