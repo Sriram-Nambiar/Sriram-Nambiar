@@ -6,13 +6,18 @@ Setup:
   1. Create a token at https://github.com/settings/tokens
      (classic token, no special scopes needed for public contribution data)
   2. Run:  export GITHUB_TOKEN=ghp_yourtokenhere
-  3. Run:  python generate_contribution_graph.py Sriram-Nambiar --start 2026-01-01
+  3. Run:  python generate_contribution_graph.py Sriram-Nambiar --weeks 26
   4. Output: contributions.svg — embed it in your README, e.g.:
      ![contributions](contributions.svg)
      or upload it and use its raw URL.
 
 Options:
-  --start YYYY-MM-DD   only include weeks on/after this date (default: no trimming)
+  --weeks N            only show the most recent N weeks (default: 26, ~6 months).
+                        Use 0 to show the full year. This keeps the image legible
+                        when embedded in a narrow README column, since more columns
+                        means smaller cells once GitHub scales the image to fit.
+  --start YYYY-MM-DD    alternative to --weeks: only include weeks on/after this
+                        fixed date. If both are given, --start takes priority.
 """
 
 import os
@@ -67,13 +72,18 @@ def level_color(v):
 MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-def trim_weeks(weeks, start_date):
+def trim_weeks_by_date(weeks, start_date):
     if not start_date:
         return weeks
     return [
         week for week in weeks
         if week["contributionDays"] and week["contributionDays"][-1]["date"] >= start_date
     ]
+
+def trim_weeks_by_count(weeks, num_weeks):
+    if not num_weeks or num_weeks <= 0:
+        return weeks
+    return weeks[-num_weeks:]
 
 def build_svg(weeks):
     cell = 34
@@ -118,7 +128,10 @@ def build_svg(weeks):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("username", nargs="?", default="Sriram-Nambiar")
-    parser.add_argument("--start", default=None, help="Only show weeks on/after this date, e.g. 2026-01-01")
+    parser.add_argument("--weeks", type=int, default=26,
+                         help="Show only the most recent N weeks (default: 26). Use 0 for the full year.")
+    parser.add_argument("--start", default=None,
+                         help="Only show weeks on/after this fixed date, e.g. 2026-01-01. Overrides --weeks if set.")
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN")
@@ -127,7 +140,12 @@ if __name__ == "__main__":
         sys.exit(1)
 
     weeks = fetch_contributions(args.username, token)
-    weeks = trim_weeks(weeks, args.start)
+
+    if args.start:
+        weeks = trim_weeks_by_date(weeks, args.start)
+    else:
+        weeks = trim_weeks_by_count(weeks, args.weeks)
+
     svg = build_svg(weeks)
     with open("contributions.svg", "w") as f:
         f.write(svg)
