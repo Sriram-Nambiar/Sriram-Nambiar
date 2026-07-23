@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate contribution graph
         env:
-          GITHUB_TOKEN: ${{ secrets.CONTRIB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: python generate_contribution_graph.py Sriram-Nambiar --weeks 26
 
       - name: Commit and push if the SVG changed
