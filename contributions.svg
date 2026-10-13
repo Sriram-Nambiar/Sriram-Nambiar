@@ -357,13 +357,13 @@
 <rect x="928" y="178" width="34" height="34" rx="4" fill="#39d353"/>
 <text x="945.0" y="199.0" fill="#e6edf3" font-size="10" font-weight="600" font-family="sans-serif" text-anchor="middle">34</text>
 <rect x="928" y="215" width="34" height="34" rx="4" fill="#39d353"/>
-<text x="945.0" y="236.0" fill="#e6edf3" font-size="10" font-weight="600" font-family="sans-serif" text-anchor="middle">53</text>
+<text x="945.0" y="236.0" fill="#e6edf3" font-size="10" font-weight="600" font-family="sans-serif" text-anchor="middle">52</text>
 <rect x="928" y="252" width="34" height="34" rx="4" fill="#39d353"/>
 <text x="945.0" y="273.0" fill="#e6edf3" font-size="10" font-weight="600" font-family="sans-serif" text-anchor="middle">82</text>
 <rect x="965" y="30" width="34" height="34" rx="4" fill="#161b22"/>
 <text x="982.0" y="51.0" fill="#6e7681" font-size="10" font-weight="600" font-family="sans-serif" text-anchor="middle">0</text>
 <rect x="965" y="67" width="34" height="34" rx="4" fill="#0e4429"/>
 <text x="982.0" y="88.0" fill="#e6edf3" font-size="10" font-weight="600" font-family="sans-serif" text-anchor="middle">3</text>
-<rect x="965" y="104" width="34" height="34" rx="4" fill="#161b22"/>
-<text x="982.0" y="125.0" fill="#6e7681" font-size="10" font-weight="600" font-family="sans-serif" text-anchor="middle">0</text>
+<rect x="965" y="104" width="34" height="34" rx="4" fill="#0e4429"/>
+<text x="982.0" y="125.0" fill="#e6edf3" font-size="10" font-weight="600" font-family="sans-serif" text-anchor="middle">1</text>
 </svg>
