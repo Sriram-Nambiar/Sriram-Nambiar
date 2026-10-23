@@ -1,13 +1,7 @@
-# Hi, I'm Sriram Nambiar 👋
+# Sriram Nambiar
 
-I'm a Computer Science undergraduate who enjoys building software, solving problems, and learning by contributing to real-world projects. I'm passionate about **open source** because I enjoy collaborating with developers, improving tools that people use, and giving back to the communities behind the software I rely on.
+I'm a Computer Science undergraduate passionate about open-source development, software engineering, and building useful software. I enjoy collaborating with developers, solving real-world problems, and contributing to projects across different open-source communities.
 
-My interests include software engineering, web development, developer tools, and open-source infrastructure. I work with technologies such as Python, JavaScript, TypeScript, React, and C++, and I'm continually improving my skills through hands-on projects, bug fixes, testing, documentation, and collaboration with maintainers.
-
-I believe the best way to learn software engineering is to build things, explore unfamiliar codebases, and contribute improvements that make software more reliable and useful. I enjoy contributing across different open-source communities and am always looking for opportunities to learn and help.
-
-- **GitHub:** [@Sriram-Nambiar](https://github.com/Sriram-Nambiar)
-- **Interests:** Open source, software engineering, web development, developer tools, and offline-first access to information.
 
 ---
 
@@ -15,7 +9,7 @@ I believe the best way to learn software engineering is to build things, explore
 
 ## Kiwix & openZIM
 
-I contribute to projects that help people access knowledge offline, along with the tools and infrastructure that support this ecosystem.
+I contribute to projects that help people access knowledge offline and improve the tools and infrastructure behind them.
 
 ### My Forks
 
@@ -41,7 +35,7 @@ I contribute to projects that help people access knowledge offline, along with t
 #### Kiwix
 
 - **[kiwix/kiwix-desktop #1525 — Fix glitch with first tab when launching with a ZIM file](https://github.com/kiwix/kiwix-desktop/pull/1525)**  
-  Fixed a glitch affecting the first tab when the application launches with a ZIM file. Related issue: [#1486](https://github.com/kiwix/kiwix-desktop/issues/1486).
+  Fixed a glitch affecting the first tab when the application launches with a ZIM file.
 
 #### openZIM
 
@@ -49,19 +43,19 @@ I contribute to projects that help people access knowledge offline, along with t
   Updated Doxygen configuration so Xapian methods are included in generated documentation.
 
 - **[openzim/papers #59 — Sort collections alphabetically in the sidebar](https://github.com/openzim/papers/pull/59)**  
-  Improved the UI by sorting collections alphabetically in the sidebar.
+  Sorted collections alphabetically in the sidebar.
 
 - **[openzim/papers #67 — Fetch Gutenberg author portraits without requiring biographies](https://github.com/openzim/papers/pull/67)**  
-  Improved support for fetching author portraits for non-English ZIMs.
+  Improved author portrait fetching for non-English ZIMs.
 
 - **[openzim/papers #89 — Blur background content behind `ZimInfoDialog`](https://github.com/openzim/papers/pull/89)**  
-  Added a blur effect to the dialog's background overlay.
+  Added a blur effect behind the dialog.
 
 - **[openzim/mwoffliner #2932 — Fix parsing of `jsConfigVars` with whitespace before the colon](https://github.com/openzim/mwoffliner/pull/2932)**  
   Fixed parsing when whitespace appears before a colon in `jsConfigVars`.
 
 - **[openzim/mwoffliner #2959 — Fix files dropped when a host is marked complete during retry](https://github.com/openzim/mwoffliner/pull/2959)**  
-  Fixed a file-management race condition involving in-flight downloads and retry handling.
+  Fixed a file-management race condition involving in-flight downloads and retries.
 
 - **[openzim/python-scraperlib #352 — Add a fuzzy URL-rewriting rule for `lesbases.anct.gouv.fr`](https://github.com/openzim/python-scraperlib/pull/352)**  
   Added a URL-rewriting rule to prevent a React Server Component payload from overwriting HTML.
@@ -71,21 +65,10 @@ I contribute to projects that help people access knowledge offline, along with t
 ### Backstage
 
 - **[backstage/backstage #36057 — Fix home landing page configuration in create-app template](https://github.com/backstage/backstage/pull/36057)**  
-  Fixed the generated app configuration so developers can set the Home page as the root landing page without encountering a 404 error. Also clarified the configuration comments to guide adopters.
+  Fixed the generated app configuration so developers can set the Home page as the root landing page without encountering a 404 error.
 
-## Contribution Snapshot
 
-- **14** Kiwix/openZIM ecosystem forks listed above.
-- **9** merged pull requests documented:
-  - Kiwix: 1
-  - openZIM: 7
-  - Backstage: 1
 
 ---
 
-## What I'm Looking Forward To
-
-I'm excited to keep exploring new codebases, learning from experienced developers, and contributing to open-source projects across different communities. Whether it's fixing bugs, improving developer experience, adding tests, or building useful features, I want to keep learning while making meaningful contributions.
-
-**Open source is more than writing code—it's about collaboration, continuous learning, and helping make software better for everyone.**
-
+I look forward to contributing to more open-source projects, learning from maintainers, and helping make software better through collaboration and continuous learning.
