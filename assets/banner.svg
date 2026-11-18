@@ -1,0 +1,56 @@
+
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b89b00"/>
+      <stop offset="50%" stop-color="#ffe000"/>
+      <stop offset="100%" stop-color="#a88b00"/>
+    </linearGradient>
+
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#777" opacity=".35"/>
+    </pattern>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" fill="#171717"/>
+
+  <!-- Header -->
+  <rect width="1200" height="42" fill="#222"/>
+  <text x="22" y="27" fill="#ffffff"
+        font-family="monospace" font-size="16">
+    sriram <tspan fill="#ffe000">✦</tspan> BUILDING
+  </text>
+  <text x="1175" y="27" text-anchor="end"
+        fill="#999" font-family="monospace" font-size="13">
+    github.com/Sriram-Nambiar
+  </text>
+
+  <path d="M0 42 H1200" stroke="#444"/>
+
+  <!-- Background texture -->
+  <rect y="43" width="1200" height="257" fill="url(#dots)"/>
+
+  <!-- Waveform glow -->
+  <path d="M0 180 Q120 110 250 170 T500 160 T750 175 T1000 140 T1200 155"
+        fill="none" stroke="#ffe000" stroke-width="28"
+        opacity=".45" filter="url(#glow)"/>
+
+  <!-- Main waveform -->
+  <path d="M0 180 Q120 110 250 170 T500 160 T750 175 T1000 140 T1200 155"
+        fill="none" stroke="url(#wave)" stroke-width="12"/>
+
+  <path d="M0 190 Q120 130 250 180 T500 175 T750 185 T1000 155 T1200 165"
+        fill="none" stroke="#ffe000" stroke-width="4"/>
+
+  <!-- Secondary waveform -->
+  <path d="M0 210 Q180 180 300 205 T600 220 T900 190 T1200 205"
+        fill="none" stroke="#d6b900" stroke-width="5" opacity=".5"/>
+
+  <!-- Bottom border -->
+  <path d="M0 299 H1200" stroke="#444"/>
+</svg>
